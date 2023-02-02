@@ -1,0 +1,232 @@
+@extends('layouts.frontend')
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+
+            <div class="card">
+                <div class="card-header">
+                    {{ trans('global.edit') }} {{ trans('cruds.cargo.title_singular') }}
+                </div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route("frontend.cargos.update", [$cargo->id]) }}" enctype="multipart/form-data">
+                        @method('PUT')
+                        @csrf
+                        <div class="form-group">
+                            <label class="required" for="name">{{ trans('cruds.cargo.fields.name') }}</label>
+                            <input class="form-control" type="text" name="name" id="name" value="{{ old('name', $cargo->name) }}" required>
+                            @if($errors->has('name'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('name') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.name_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" for="count">{{ trans('cruds.cargo.fields.count') }}</label>
+                            <input class="form-control" type="number" name="count" id="count" value="{{ old('count', $cargo->count) }}" step="1" required>
+                            @if($errors->has('count'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('count') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.count_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" for="unit">{{ trans('cruds.cargo.fields.unit') }}</label>
+                            <input class="form-control" type="text" name="unit" id="unit" value="{{ old('unit', $cargo->unit) }}" required>
+                            @if($errors->has('unit'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('unit') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.unit_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" for="amount">{{ trans('cruds.cargo.fields.amount') }}</label>
+                            <input class="form-control" type="number" name="amount" id="amount" value="{{ old('amount', $cargo->amount) }}" step="0.0001" required>
+                            @if($errors->has('amount'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('amount') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.amount_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">{{ trans('cruds.cargo.fields.weight') }}</label>
+                            <input class="form-control" type="number" name="weight" id="weight" value="{{ old('weight', $cargo->weight) }}" step="0.0001">
+                            @if($errors->has('weight'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('weight') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.weight_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="total_value">{{ trans('cruds.cargo.fields.total_value') }}</label>
+                            <input class="form-control" type="number" name="total_value" id="total_value" value="{{ old('total_value', $cargo->total_value) }}" step="0.0001">
+                            @if($errors->has('total_value'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('total_value') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.total_value_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="currency">{{ trans('cruds.cargo.fields.currency') }}</label>
+                            <input class="form-control" type="text" name="currency" id="currency" value="{{ old('currency', $cargo->currency) }}">
+                            @if($errors->has('currency'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('currency') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.currency_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" for="source_area">{{ trans('cruds.cargo.fields.source_area') }}</label>
+                            <input class="form-control" type="text" name="source_area" id="source_area" value="{{ old('source_area', $cargo->source_area) }}" required>
+                            @if($errors->has('source_area'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('source_area') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.source_area_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="product_record_no">{{ trans('cruds.cargo.fields.product_record_no') }}</label>
+                            <input class="form-control" type="text" name="product_record_no" id="product_record_no" value="{{ old('product_record_no', $cargo->product_record_no) }}">
+                            @if($errors->has('product_record_no'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('product_record_no') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.product_record_no_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="brand">{{ trans('cruds.cargo.fields.brand') }}</label>
+                            <input class="form-control" type="text" name="brand" id="brand" value="{{ old('brand', $cargo->brand) }}">
+                            @if($errors->has('brand'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('brand') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.brand_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="statebarcode">{{ trans('cruds.cargo.fields.statebarcode') }}</label>
+                            <input class="form-control" type="text" name="statebarcode" id="statebarcode" value="{{ old('statebarcode', $cargo->statebarcode) }}">
+                            @if($errors->has('statebarcode'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('statebarcode') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.statebarcode_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="specifications">{{ trans('cruds.cargo.fields.specifications') }}</label>
+                            <input class="form-control" type="text" name="specifications" id="specifications" value="{{ old('specifications', $cargo->specifications) }}">
+                            @if($errors->has('specifications'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('specifications') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.specifications_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="goods_code">{{ trans('cruds.cargo.fields.goods_code') }}</label>
+                            <input class="form-control" type="text" name="goods_code" id="goods_code" value="{{ old('goods_code', $cargo->goods_code) }}">
+                            @if($errors->has('goods_code'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('goods_code') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.goods_code_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="good_prepard_no">{{ trans('cruds.cargo.fields.good_prepard_no') }}</label>
+                            <input class="form-control" type="text" name="good_prepard_no" id="good_prepard_no" value="{{ old('good_prepard_no', $cargo->good_prepard_no) }}">
+                            @if($errors->has('good_prepard_no'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('good_prepard_no') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.good_prepard_no_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="hts_code">{{ trans('cruds.cargo.fields.hts_code') }}</label>
+                            <input class="form-control" type="text" name="hts_code" id="hts_code" value="{{ old('hts_code', $cargo->hts_code) }}">
+                            @if($errors->has('hts_code'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('hts_code') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.hts_code_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="hts_desc">{{ trans('cruds.cargo.fields.hts_desc') }}</label>
+                            <input class="form-control" type="text" name="hts_desc" id="hts_desc" value="{{ old('hts_desc', $cargo->hts_desc) }}">
+                            @if($errors->has('hts_desc'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('hts_desc') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.hts_desc_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="item_no">{{ trans('cruds.cargo.fields.item_no') }}</label>
+                            <input class="form-control" type="number" name="item_no" id="item_no" value="{{ old('item_no', $cargo->item_no) }}" step="1">
+                            @if($errors->has('item_no'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('item_no') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.item_no_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="qty_1">{{ trans('cruds.cargo.fields.qty_1') }}</label>
+                            <input class="form-control" type="number" name="qty_1" id="qty_1" value="{{ old('qty_1', $cargo->qty_1) }}" step="0.00001">
+                            @if($errors->has('qty_1'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('qty_1') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.qty_1_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="unit_1">{{ trans('cruds.cargo.fields.unit_1') }}</label>
+                            <input class="form-control" type="text" name="unit_1" id="unit_1" value="{{ old('unit_1', $cargo->unit_1) }}">
+                            @if($errors->has('unit_1'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('unit_1') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.unit_1_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="shipment_id">{{ trans('cruds.cargo.fields.shipment') }}</label>
+                            <select class="form-control select2" name="shipment_id" id="shipment_id">
+                                @foreach($shipments as $id => $entry)
+                                    <option value="{{ $id }}" {{ (old('shipment_id') ? old('shipment_id') : $cargo->shipment->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                                @endforeach
+                            </select>
+                            @if($errors->has('shipment'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('shipment') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.cargo.fields.shipment_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-danger" type="submit">
+                                {{ trans('global.save') }}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@endsection

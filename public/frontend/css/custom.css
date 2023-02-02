@@ -1,0 +1,172 @@
+html::-webkit-scrollbar {
+    width: 10px; 
+ }
+
+html::-webkit-scrollbar-track {
+  background-color: #5a5a5a;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #dc1e31;
+  border-radius: 25px;
+}
+html::-webkit-scrollbar-thumb:hover {
+    background: #a80f1f;
+
+  }
+
+#header{
+    background-color: #5a5a5a;
+}
+
+#home{
+    padding-top:10px;
+}
+
+
+.quicklink:link, .quicklink:visited{
+    display: flex;
+    color: #fff; 
+    height: 100%;
+    width: 100%;
+    transition: 0.3s;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.quicklink:hover{
+    text-decoration: none!important;
+    background-color: #d2d2d2;
+    color: #dc1e31;
+}
+
+.outer {
+    width: 0.5px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+ }
+
+ .inner {
+    position: absolute;
+    width:100%;
+    height: 1px;
+    background: rgb(255, 255, 255);
+    top: 50%;
+    box-shadow: 0px 0px 20px 20px rgb(255, 255, 255);
+}
+
+.quicklink i{
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-right: 12px;
+/*
+      display: inline-block;
+  border-radius: 60px;
+  box-shadow: 0px 0px 2px #888;
+  padding: 0.5em 0.6em;
+  */
+}
+
+
+/* Section style start ============== */
+.strengh{
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.icons-outline{
+    font-size: 3.5rem;
+    color: #dc1f32;
+	display: inline-block;
+	border-radius: 50px;
+	box-shadow: 0px 0px 8px #dc1f32;
+	padding: 0.4em 0.4em;
+	}
+.feature-box-style-1 {
+    margin-bottom: 6rem;
+		
+}
+/* Section style end ============== */
+
+
+#address{
+    border-top: 5px solid red initial !important;
+}
+
+.captcha {
+    height: auto;
+    margin-bottom: 0;
+}
+
+.input-group{
+    margin-bottom: 15px;
+}
+
+
+.invalid-feedback {
+    display: block !important;
+    margin-top:-15px;
+    margin-bottom:15px;
+}
+
+.quicklink i{
+
+  border-radius: 50%;
+  border: 2px solid; 
+  height:42px;
+  width: 42px; 
+  text-align: center;
+ padding-top: 7px;
+}
+/* X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) { 
+    .custom-svg-1 {
+        position: absolute;
+        left: -1200px;
+        top: -20px;
+        width: 800px;
+        height: 700px;
+        opacity: 0.5;
+       
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+    .custom-svg-1 {
+        position: absolute;
+        left: -260px;
+        top: -20px;
+        width: 800px;
+        height: 700px;
+        opacity: 0.5;
+    }
+    
+ }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .custom-svg-1 {
+        position: absolute;
+        left: -160px;
+        top: -20px;
+        width: 800px;
+        height: 700px;
+        opacity: 0.5;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    
+}
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+    
+}

@@ -1,0 +1,109 @@
+@charset "UTF-8";
+body {
+    background-color: #b3b3b3;
+    /*background-color: #e5e5e5;*/
+    padding-right: 0px !important; /* fix for boorstrap modal with : .modal-open {overflow-y: scroll; }*/
+}
+
+.page-header {
+    margin-top: 153px;
+    background-color: #e3e3e3;
+    margin-bottom: 5px;
+}
+ 
+.card {
+    border-radius: 6px;
+    box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+.modal.fade .modal-dialog.modal-dialog-zoom {-webkit-transform: translate(0,0)scale(.5);transform: translate(0,0)scale(.5);}
+.modal.show .modal-dialog.modal-dialog-zoom {-webkit-transform: translate(0,0)scale(1);transform: translate(0,0)scale(1);}
+
+.modal-open {
+    overflow-y: scroll; 
+  }
+
+
+.example-open .modal-backdrop {background-color:rgb(59, 59, 59);}
+
+.modal-backdrop
+{
+    opacity:0.8 !important;
+    
+}
+ 
+#page-topbar{
+    position: fixed; 
+    top:0px; 
+    right:0px;  
+    left: 0px;
+    z-index: 1002;
+    background-color: #252b36;
+}
+.navbar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    height: 70px;
+    border-bottom:0;
+}
+
+.navbar-brand img {
+    height: 3.7rem;
+}
+.navbar-brand{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+.table td, .table th {
+    padding: .75rem 0.2rem;
+}
+
+
+
+@media (min-width: 992px){
+    body[data-layout=horizontal] .topnav {
+        margin-top: 24px;
+        margin-bottom: -16px;
+        border-radius: 4px;
+    }
+    body[data-layout=horizontal] .container-fluid, body[data-layout=horizontal] .navbar-header {
+        max-width: 85%;
+    }
+}
+
+.bg-indigo {
+    background-color: #dc1e31!important;
+}
+.footer{
+    display: block;
+}
+
+.page-content {
+padding: 0;
+}
+
+.page-title {
+    padding: 1.3rem 0;
+}
+
+
+input:required {
+    border: 1px solid red;
+    outline: none;
+    }
+
+input:valid {
+border: 1px solid green;
+}
+
+select:required {
+    border: 1px solid red;
+    outline: none;
+    }
+
+select:valid {
+border: 1px solid green;
+}
