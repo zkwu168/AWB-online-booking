@@ -8,6 +8,6 @@ Internatioanl Parcel Online Booking Platform (Order, Payment, Warehouse OP, API 
 	-Datatable
 
 <p align="center">
-  <img src="https://github.com/zkwu168/BPMN.png" width="350" title="Project BPMN">
+  <img src="https://github.com/zkwu168/AWB-online-booking/blob/master/BPMN.png" width="350" title="Project BPMN">
 </p>
 
